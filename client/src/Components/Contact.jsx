@@ -13,11 +13,12 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
- const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault()
   setStatus('loading')
   try {
-    const BASE_URL = import.meta.env.VITE_API_URL || ''
+    // trim removes any accidental trailing slash
+    const BASE_URL = (import.meta.env.VITE_API_URL || '').trim().replace(/\/$/, '')
     await axios.post(`${BASE_URL}/api/contact`, form)
     setStatus('success')
     setForm(initialForm)
