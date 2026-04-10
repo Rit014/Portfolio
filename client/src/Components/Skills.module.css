@@ -1,0 +1,68 @@
+.section {
+  padding: 2.5rem 2rem;
+  border-top: 0.5px solid var(--border-faint);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.2rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-mono);
+  transition: transform 0.2s;
+  cursor: default;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+}
+
+/* M = MongoDB — green */
+.tagM {
+  background: #1a2e22;
+  color: #7fd4a0;
+  border: 0.5px solid rgba(127, 212, 160, 0.25);
+}
+
+/* E = Express — purple */
+.tagE {
+  background: #1e1a2e;
+  color: #a59cf5;
+  border: 0.5px solid rgba(165, 156, 245, 0.25);
+}
+
+/* R = React — red/coral */
+.tagR {
+  background: #2e1a1a;
+  color: #f5a09c;
+  border: 0.5px solid rgba(245, 160, 156, 0.25);
+}
+
+/* N = Node — blue */
+.tagN {
+  background: #1a2a2e;
+  color: #9ce4f5;
+  border: 0.5px solid rgba(156, 228, 245, 0.25);
+}
+
+/* X = tools — gray */
+.tagX {
+  background: #1a1a1a;
+  color: #888899;
+  border: 0.5px solid rgba(255,255,255,0.12);
+}
