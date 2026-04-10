@@ -13,18 +13,18 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    console.log('Sending form data:', form) 
-    setStatus('loading')
-    try {
-      await axios.post('/api/contact', form)
-      setStatus('success')
-      setForm(initialForm)
-    } catch {
-      setStatus('error')
-    }
+ const handleSubmit = async (e) => {
+  e.preventDefault()
+  setStatus('loading')
+  try {
+    const BASE_URL = import.meta.env.VITE_API_URL || ''
+    await axios.post(`${BASE_URL}/api/contact`, form)
+    setStatus('success')
+    setForm(initialForm)
+  } catch {
+    setStatus('error')
   }
+}
 
   return (
     <section id="contact" className={styles.section}>
